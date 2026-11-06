@@ -1,0 +1,792 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+  --olive: #263A36;
+  --sand: #D8C6A8;
+  --ivory: #F4F0E8;
+  --terracotta: #A77B55;
+  --charcoal: #252522;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ivory);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  letter-spacing: 3px;
+  color: var(--olive);
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  gap: 38px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--terracotta);
+}
+
+.nav-button {
+  padding: 14px 25px;
+  background: var(--olive);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: var(--terracotta);
+}
+
+.menu-mobile {
+  display: none;
+  border: none;
+  background: none;
+  color: var(--olive);
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: calc(100vh - 90px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  color: white;
+
+  background-image: url("/images/hero-maison-aveline.png");
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(20, 31, 28, 0.75) 0%,
+    rgba(20, 31, 28, 0.35) 55%,
+    rgba(20, 31, 28, 0.10) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-subtitle {
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 7vw, 100px);
+  font-weight: 400;
+  line-height: 0.98;
+  margin-bottom: 25px;
+}
+
+.hero-description {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 18px 30px;
+  border: 1px solid white;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+}
+
+.hero-button:hover {
+  background: white;
+  color: var(--olive);
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 7%;
+  right: 7%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+/* EXPERIENCE */
+
+.experience {
+  min-height: 680px;
+  padding: 120px 9%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 90px;
+  background-color: var(--ivory);
+}
+
+.experience-image {
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1s ease;
+}
+
+.experience-image:hover img {
+  transform: scale(1.04);
+}
+
+.experience-content {
+  max-width: 500px;
+}
+
+.experience-label {
+  color: var(--terracotta);
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.experience-content h2 {
+  margin: 28px 0;
+  color: var(--olive);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.experience-line {
+  width: 55px;
+  height: 1px;
+  background-color: var(--terracotta);
+  margin: 30px 0;
+}
+
+.experience-content p {
+  color: #68665f;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 35px;
+}
+
+.experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--olive);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: gap 0.3s ease;
+}
+
+.experience-link:hover {
+  gap: 28px;
+}
+
+.experience-link span {
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 75px;
+    padding: 0 6%;
+  }
+
+  .nav-links,
+  .nav-button {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
+
+  .hero {
+    min-height: calc(100vh - 75px);
+    padding: 0 7%;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero-bottom {
+    font-size: 7px;
+  }
+
+  .experience {
+    grid-template-columns: 1fr;
+    padding: 75px 7%;
+    gap: 45px;
+  }
+
+  .experience-image {
+    height: 380px;
+  }
+
+  .experience-content h2 {
+    font-size: 43px;
+  }
+}
+/* ================================
+   SUITES & HÉBERGEMENTS
+================================ */
+
+.suites {
+  padding: 120px 8%;
+  background: var(--sand);
+  color: var(--charcoal);
+}
+
+.suites-header {
+  max-width: 650px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.section-label {
+  display: block;
+  color: var(--terracotta);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.suites-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.suites-header h2 em {
+  color: var(--terracotta);
+}
+
+.suites-header p {
+  color: #77736d;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.suites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.suite-card {
+  min-width: 0;
+}
+
+.suite-image {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.suite-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.suite-card:hover .suite-image img {
+  transform: scale(1.06);
+}
+
+.suite-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.suite-info {
+  padding: 25px 0;
+}
+
+.suite-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.suite-description {
+  color: #77736d;
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 45px;
+  margin-bottom: 18px;
+}
+
+.suite-detail {
+  display: block;
+  color: var(--terracotta);
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.suite-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #ded8ce;
+  padding-top: 18px;
+}
+
+.suite-bottom p {
+  font-size: 11px;
+  color: #77736d;
+}
+
+.suite-bottom strong {
+  color: var(--charcoal);
+  font-size: 17px;
+}
+
+.suite-bottom a {
+  color: var(--charcoal);
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.suite-bottom a:hover {
+  color: var(--terracotta);
+}
+
+/* TABLETTES ET MOBILES */
+
+@media (max-width: 900px) {
+  .suites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .suite-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .suites {
+    padding: 80px 6%;
+  }
+
+  .suites-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .suite-image {
+    height: 380px;
+  }
+
+  .suite-description {
+    min-height: auto;
+  }
+}/* =================================
+   EXPERIENCES
+================================= */
+
+.experiences {
+  padding: 120px 8%;
+  background: #263A36;
+  color: #F4F0E8;
+}
+
+.experiences-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 70px;
+}
+
+.experiences-header > span {
+  color: #D8C6A8;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.experiences-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 65px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 25px 0;
+}
+
+.experiences-header h2 em {
+  color: #D8C6A8;
+}
+
+.experiences-header p {
+  color: #C5C7BD;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px 30px;
+}
+
+.experience-card {
+  overflow: hidden;
+}
+
+.experience-card-image {
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.experience-card:hover .experience-card-image img {
+  transform: scale(1.06);
+}
+
+.experience-card-image > span {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.experience-card-content {
+  padding: 25px 0;
+}
+
+.experience-card-content > span {
+  color: #D8C6A8;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.experience-card-content h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.experience-card-content p {
+  color: #C5C7BD;
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 430px;
+  margin-bottom: 20px;
+}
+
+.experience-card-content a {
+  color: #D8C6A8;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.experience-card-content a:hover {
+  color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .experiences {
+    padding: 85px 6%;
+  }
+
+  .experiences-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .experience-card-image {
+    height: 300px;
+  }
+}/* =================================
+   GALLERY
+================================= */
+
+.gallery {
+  padding: 120px 8%;
+  background: #F4F0E8;
+  color: #252522;
+}
+
+.gallery-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 65px;
+}
+
+.gallery-header > span {
+  color: #A77B55;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.gallery-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(40px, 5vw, 62px);
+  font-weight: 400;
+  margin: 22px 0;
+}
+
+.gallery-header h2 em {
+  color: #A77B55;
+}
+
+.gallery-header p {
+  color: #77736D;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .gallery {
+    padding: 85px 6%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+    gap: 10px;
+  }
+
+  .gallery-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}/* =================================
+   RESERVATION
+================================= */
+
+.reservation {
+  padding: 120px 8%;
+  background: #263A36;
+  color: #F4F0E8;
+}
+
+.reservation-content {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.reservation-label {
+  color: #D8C6A8;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.reservation-content h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 6vw, 70px);
+  font-weight: 400;
+  margin: 25px 0;
+}
+
+.reservation-content h2 em {
+  color: #D8C6A8;
+}
+
+.reservation-content > p {
+  max-width: 580px;
+  margin: 0 auto 55px;
+  color: #C5C7BD;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  align-items: end;
+  gap: 15px;
+  padding: 25px;
+  background: #F4F0E8;
+  color: #252522;
+  text-align: left;
+}
+
+.reservation-field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reservation-field label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #77736D;
+}
+
+.reservation-field input,
+.reservation-field select {
+  width: 100%;
+  padding: 12px 5px;
+  border: none;
+  border-bottom: 1px solid #D8C6A8;
+  background: transparent;
+  color: #252522;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.reservation-form button {
+  padding: 16px 22px;
+  background: #A77B55;
+  color: white;
+  border: none;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.reservation-form button:hover {
+  background: #263A36;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .reservation-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .reservation {
+    padding: 85px 6%;
+  }
+
+  .reservation-form {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .reservation-form button {
+    width: 100%;
+  }
+}
